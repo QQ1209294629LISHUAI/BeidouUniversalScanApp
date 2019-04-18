@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/resultImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <net.doo.snap.ui.EditPolygonImageView
+        android:id="@+id/polygonView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cornerImageSrc="@drawable/ui_crop_corner_handle"
+        app:edgeColor="#00cea6"
+        app:edgeImageSrc="@drawable/ui_crop_side_handle"
+        app:editPolygonHandleSize="48dp"
+        app:magneticLineTreshold="10dp" />
+
+    <net.doo.snap.ui.MagnifierView
+        android:id="@+id/magnifier"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:editPolygonMagnifier="#fff"
+        app:magnifierCrossSize="16dp"
+        app:magnifierCrossStrokeWidth="2dp"
+        app:magnifierImageSrc="@drawable/ui_crop_magnifier"
+        app:magnifierMargin="16dp"
+        app:magnifierRadius="36dp"
+        app:magnifierStrokeWidth="4dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y140"
+        android:layout_alignParentBottom="true"
+        android:background="#1E2A3A">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="@dimen/x70"
+            android:layout_height="@dimen/x70"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x20"
+            android:src="@drawable/back" />
+
+        <ImageView
+            android:id="@+id/iv_add"
+            android:layout_width="@dimen/x70"
+            android:layout_height="@dimen/x70"
+            android:layout_centerInParent="true"
+            android:src="@drawable/add"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_confirm"
+            android:layout_width="@dimen/x60"
+            android:layout_height="@dimen/x60"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x20"
+            android:src="@drawable/confirm" />
+
+    </RelativeLayout>
+</RelativeLayout>

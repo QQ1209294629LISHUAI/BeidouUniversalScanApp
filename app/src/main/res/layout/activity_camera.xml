@@ -1,0 +1,76 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--Scanbot相机控件-->
+    <net.doo.snap.camera.ScanbotCameraView
+        android:id="@+id/scanbotCameraView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--自动识别框-->
+        <net.doo.snap.ui.PolygonView
+            android:id="@+id/polygonView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:polygonFillColor="#55009688"
+            app:polygonStrokeColor="@color/material_deep_teal_200"
+            app:polygonStrokeWidth="8dp" />
+
+    </net.doo.snap.camera.ScanbotCameraView>
+
+    <ImageView
+        android:id="@+id/ic_idcard"
+        android:layout_width="@dimen/x900"
+        android:layout_height="@dimen/y568"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/y300"
+        android:src="@drawable/ic_idcard_head_horizontal"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/ic_idcard_emblem"
+        android:layout_width="@dimen/x900"
+        android:layout_height="@dimen/y568"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/y300"
+        android:src="@drawable/ic_idcard_emblem_horizontal"
+        android:visibility="gone" />
+
+    <!--所拍摄照片-->
+    <ImageView
+        android:id="@+id/resultImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="@dimen/y300"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#1E2A3A"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <!--拍照类型选择-->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tl_type_select"
+            style="@style/MyTablayoutstyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabMode="scrollable" />
+
+        <!--底部拍照按钮-->
+        <Button
+            android:id="@+id/snap"
+            android:layout_width="@dimen/x100"
+            android:layout_height="@dimen/x100"
+            android:layout_marginTop="@dimen/y20"
+            android:layout_marginBottom="@dimen/y20"
+            android:background="@drawable/ic_capture_capure" />
+
+    </LinearLayout>
+
+</FrameLayout>

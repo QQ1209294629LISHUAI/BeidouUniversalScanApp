@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#506070">
+
+    <com.github.chrisbanes.photoview.PhotoView
+        android:id="@+id/iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/x20"
+        android:layout_marginRight="@dimen/x20" />
+
+    <TextView
+        android:id="@+id/tv_pic_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/y100"
+        android:background="@drawable/bg_level_yellow"
+        android:paddingLeft="@dimen/x20"
+        android:paddingTop="@dimen/y10"
+        android:paddingRight="@dimen/x20"
+        android:paddingBottom="@dimen/y10"
+        android:text="身份证1"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/y33" />
+</RelativeLayout>

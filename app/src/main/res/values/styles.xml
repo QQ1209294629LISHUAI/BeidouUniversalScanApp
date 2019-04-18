@@ -1,0 +1,45 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
+    <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+    <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+    <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+    <!--<item name="colorAccent">@color/colorAccent</item>-->
+    <!--</style>-->
+    <!--整个程序的主题：此处自定义该AppTheme-->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
+
+    <!--PaletteImageView自定义样式-->
+    <declare-styleable name="PaletteImageView">
+        <attr name="paletteRadius" format="dimension" />
+        <attr name="paletteSrc" format="reference" />
+        <attr name="palettePadding" format="dimension" />
+        <attr name="paletteOffsetX" format="dimension" />
+        <attr name="paletteOffsetY" format="dimension" />
+        <attr name="paletteShadowRadius" format="dimension" />
+
+    </declare-styleable>
+
+    <!--TabLayout自定义样式-->
+    <style name="MyTablayoutstyle" parent="Base.Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">@color/colorPrimary</item>
+        <item name="tabIndicatorHeight">2dp</item>
+        <item name="tabTextColor">@android:color/white</item>
+        <item name="tabSelectedTextColor">@color/colorPrimary</item>
+    </style>
+
+    <!--minSDK为21以上才能使用该样式，引用的时候设置Theme属性而不是Style属性-->
+    <style name="CheckBox_Style_01" parent="@android:style/Widget.Material.CompoundButton.CheckBox">
+        <item name="android:colorControlActivated">@color/red_light</item>
+        <item name="android:colorControlNormal">@android:color/white</item>
+    </style>
+
+</resources>

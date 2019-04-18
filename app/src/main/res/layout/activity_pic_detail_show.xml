@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ECF0F1"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <!--此处不直接设置title，左侧图标，图片menu，文字弹出框menu原因：样式固定化并且图片不能自定义大小需要和UI设计配合-->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="@dimen/x40"
+                android:layout_height="@dimen/x40"
+                android:src="@drawable/iv_back" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x70"
+                android:text="标题"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/y40" />
+
+            <!--如果不包裹一层布局，直接设置marginLeft会出现标题过长时，控件被挤出屏幕外问题-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tv_select"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x70"
+                    android:text="全选"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/y40" />
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"></androidx.recyclerview.widget.RecyclerView>
+
+    <ImageView
+        android:id="@+id/iv_capture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_marginRight="@dimen/x50"
+        android:layout_marginBottom="@dimen/y50"
+        android:background="@drawable/capture_shadow"
+        android:elevation="5dp"
+        android:src="@drawable/ic_capture_capure" />
+
+    <LinearLayout
+        android:id="@+id/ll_delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/red_light"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_delete"
+            android:layout_width="@dimen/x50"
+            android:layout_height="@dimen/y50"
+            android:layout_marginTop="@dimen/y10"
+            android:src="@drawable/delete" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/y10"
+            android:text="删除"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/y30" />
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

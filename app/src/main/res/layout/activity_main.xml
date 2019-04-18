@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ECF0F1"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <!--app:layout_scrollFlags="scroll|enterAlways":手势滑动交互-->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_excel"
+                    android:layout_width="@dimen/x60"
+                    android:layout_height="@dimen/y60"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x40"
+                    android:src="@drawable/excel"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_beidou"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x40"
+                    android:text="北斗资料归档"
+                    android:textColor="@android:color/white"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!--拍摄的照片列表-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/x10"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="@dimen/x10"></androidx.recyclerview.widget.RecyclerView>
+
+    <!--app:elevation="5dp"：海拔，高度-->
+    <!--app:fabSize="mini"：设置FAB的大小，该属性有两个值，分别为normal和mini，对应的FAB大小分别为56dp和40dp。-->
+    <!--backgroundTint：背景着色-->
+    <!--rippleColor：触摸反馈涟漪颜色-->
+    <!--pressedTranslationZ：按钮按下去的状态下的阴影大小-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:src="@mipmap/ic_capture_capure"
+        android:visibility="gone"
+        app:backgroundTint="@color/colorPrimary"
+        app:borderWidth="0dp"
+        app:elevation="6dp" />
+
+    <ImageView
+        android:id="@+id/iv_capture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_marginRight="@dimen/x50"
+        android:layout_marginBottom="@dimen/y50"
+        android:background="@drawable/capture_shadow"
+        android:elevation="5dp"
+        android:src="@drawable/ic_capture_capure" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

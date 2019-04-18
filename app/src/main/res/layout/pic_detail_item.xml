@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/y560"
+    android:gravity="center"
+    android:paddingLeft="@dimen/x10"
+    android:paddingTop="@dimen/x20"
+    android:paddingRight="@dimen/x10">
+
+    <!--根布局的width无需设置，会根据列表的宽度及所设置的列自动匹配，如果设置，展示多列的话，多列宽度加起来不一定是屏幕宽度，条目中的内容不居中-->
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="0dp"
+        android:scaleType="fitXY" />
+
+    <!--由于ImageView不是父布局，所以它固定死的宽度无法限制字体控件的宽度，所以使用match_parent还是会填充整个界面，包括使用alignParentBottom也是整个界面的底部-->
+    <TextView
+        android:id="@+id/tv_pic_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#7f7f7f"
+        android:padding="@dimen/x5"
+        android:text="01"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/y28" />
+
+    <!--设置任何主题都不起作用-->
+    <CheckBox
+        android:id="@+id/cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:theme="@style/CheckBox_Style_01"
+        android:visibility="gone" />
+
+</RelativeLayout>
